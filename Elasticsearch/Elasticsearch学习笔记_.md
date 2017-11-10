@@ -77,7 +77,17 @@ bin/elasticsearch-keystore remove the.setting.name.to.remove
 		-Xms512M
 		-Xmx512M						
 
-## [快照与还原](https://aqlu.gitbooks.io/elasticsearch-reference/content/Modules/Snapshot_And_Restore.html)
+## [快照与还原](snapshot.html)
+
+## Elasticsearch升级
+
+### [滚动升级](roll_update.html)
+
+### [全集群升级](all_cluster_update.html)
+
+### [索引重建升级](reindex_update.html)
+
+## [Elasticsearch停机](stop_elasticsearch.html)
 
 ## Elasticsearch相关知识
   

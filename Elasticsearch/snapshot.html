@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <title>snapshot</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:///C:\Users\v_tlonghe\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.3.0\node_modules\@shd101wyy\mume\dependencies\katex\katex.min.css">
+      
+      
+      
+      
+      
+      
+
+      <style> 
+      /**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #333;
+  background: none;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
+
+  -moz-tab-size: 8;
+  -o-tab-size: 8;
+  tab-size: 8;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: .8em;
+  overflow: auto;
+  /* border: 1px solid #ddd; */
+  border-radius: 3px;
+  /* background: #fff; */
+  background: #f5f5f5;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+  background: #f5f5f5;
+}
+
+.token.comment,
+.token.blockquote {
+  color: #969896;
+}
+
+.token.cdata {
+  color: #183691;
+}
+
+.token.doctype,
+.token.punctuation,
+.token.variable,
+.token.macro.property {
+  color: #333;
+}
+
+.token.operator,
+.token.important,
+.token.keyword,
+.token.rule,
+.token.builtin {
+  color: #a71d5d;
+}
+
+.token.string,
+.token.url,
+.token.regex,
+.token.attr-value {
+  color: #183691;
+}
+
+.token.property,
+.token.number,
+.token.boolean,
+.token.entity,
+.token.atrule,
+.token.constant,
+.token.symbol,
+.token.command,
+.token.code {
+  color: #0086b3;
+}
+
+.token.tag,
+.token.selector,
+.token.prolog {
+  color: #63a35c;
+}
+
+.token.function,
+.token.namespace,
+.token.pseudo-element,
+.token.class,
+.token.class-name,
+.token.pseudo-class,
+.token.id,
+.token.url-reference .token.variable,
+.token.attr-name {
+  color: #795da3;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.title,
+.token.title .token.punctuation {
+  font-weight: bold;
+  color: #1d3e81;
+}
+
+.token.list {
+  color: #ed6a43;
+}
+
+.token.inserted {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.token.deleted {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+
+/* JSON */
+.language-json .token.property {
+  color: #183691;
+}
+
+.language-markup .token.tag .token.punctuation {
+  color: #333;
+}
+
+/* CSS */
+code.language-css,
+.language-css .token.function {
+  color: #0086b3;
+}
+
+/* YAML */
+.language-yaml .token.atrule {
+  color: #63a35c;
+}
+
+code.language-yaml {
+  color: #183691;
+}
+
+/* Ruby */
+.language-ruby .token.function {
+  color: #333;
+}
+
+/* Markdown */
+.language-markdown .token.url {
+  color: #795da3;
+}
+
+/* Makefile */
+.language-makefile .token.symbol {
+  color: #795da3;
+}
+
+.language-makefile .token.variable {
+  color: #183691;
+}
+
+.language-makefile .token.builtin {
+  color: #0086b3;
+}
+
+/* Bash */
+.language-bash .token.keyword {
+  color: #0086b3;
+}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{padding:0 1.6em;margin-top:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc li{margin-bottom:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{list-style-type:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  150px);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+ 
+      </style>
+    </head>
+    <body for="html-export">
+      <div class="mume markdown-preview   ">
+      <h1 class="mume-header" id="&#x5FEB;&#x7167;&#x548C;&#x8FD8;&#x539F;">快照和还原</h1>
+
+<p>快照和还原模块支持创建单独索引或整个集群的快照到远程仓库，像共享文件系统、S3或HDFS等。你可以非常方便地进行快照备份以及比较迅速地进行快照还原，但快照的还原需要Elasticsearch的版本能正确的读取索引文件。这意味着：</p>
+<ul>
+<li>在2.x版本中创建的索引的快照可以恢复到5.x</li>
+<li>在1.x版本中创建的索引的快照可以恢复到2.x</li>
+<li>在1.x版本中创建的索引的快照不可以恢复到5.x</li>
+</ul>
+<p>要恢复在1.x版本中创建的索引快照到5.x，你可以先将其恢复到2.x版本的集群，然后重建索引到5.x集群。因为是从原始数据存档的副本恢复, 这会比较耗时。</p>
+<h2 class="mume-header" id="&#x4ED3;&#x5E93;">仓库</h2>
+
+<p>在执行任何快照或还原操作之前，应在先在Elasticsearch创建一个快照仓库。指定仓库的类型等，详情请参阅下文。</p>
+<pre class="language-">PUT /_snapshot/my_backup
+{
+  &quot;type&quot;: &quot;fs&quot;,
+  &quot;settings&quot;: {
+        ... repository specific settings ...
+  }
+}
+</pre>
+<p>一旦存储仓库被创建好，可使用下面的命令来查询其信息：</p>
+<pre class="language-">GET /_snapshot/my_backup
+</pre>
+<p>将返回：</p>
+<pre class="language-">{
+  &quot;my_backup&quot;: {
+    &quot;type&quot;: &quot;fs&quot;,
+    &quot;settings&quot;: {
+      &quot;compress&quot;: true,
+      &quot;location&quot;: &quot;/mount/backups/my_backup&quot;
+    }
+  }
+}
+</pre>
+<p>可以用逗号分隔库名来一次获取多个快照仓库的信息，支持通配符*。例如，获取以repo开头以及包含backup的所有仓库信息 可以使用下面的命令来获得：</p>
+<pre class="language-">GET /_snapshot/repo*,*backup*
+</pre>
+<p>如果没有指定仓库名称，或使用_all用作仓库名来查询，Elasticsearch将返回当前集群中注册的所有仓库信息：</p>
+<pre class="language-">GET /_snapshot
+</pre>
+<p>或者</p>
+<pre class="language-">GET /_snapshot/_all
+</pre>
+<h2 class="mume-header" id="&#x5171;&#x4EAB;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x4ED3;&#x5E93;">共享文件系统仓库</h2>
+
+<p>共享文件系统仓库（&quot;type&quot;: &quot;fs&quot;）使用共享文件系统来存储快照。如果要创建一个共享文件系统类型的快照仓库，你需要在Elasticsearch集群的所有主节点与数据节点上挂载同一个共享文件系统到同一路径下。这个路径（或它的父目录中的一个）必须在集群所有主节点和数据节点上的path.repo设置项中进行配置。</p>
+<p>如果共享文件系统被挂载到/mount/backups/my_backup，下面的配置应被添加到elasticsearch.yml文件中：</p>
+<pre class="language-">path.repo: [&quot;/mount/backups&quot;, &quot;/mount/longterm_backups&quot;]
+</pre>
+<p>path.repo的配置支持微软的Windows UNC路径格式，但需要将服务器名与指定的共享路径前缀采用斜杠正确转义：</p>
+<pre class="language-">path.repo: [&quot;\\\\MY_SERVER\\Snapshots&quot;]
+</pre>
+<p>所有节点重新启动后，下面的命令可以被用于创建一个名为my_backup的共享文件系统仓库：</p>
+<pre class="language-">$ curl -XPUT &apos;http://localhost:9200/_snapshot/my_backup&apos; -H &apos;Content-Type: application/json&apos; -d &apos;{
+    &quot;type&quot;: &quot;fs&quot;,
+    &quot;settings&quot;: {
+        &quot;location&quot;: &quot;/mount/backups/my_backup&quot;,
+        &quot;compress&quot;: true
+    }
+}&apos;
+</pre>
+<p>如果存储仓库的location被设置为一个相对路径，那么仓库存储路径将基于path.repo设置的路径开始解析：</p>
+<pre class="language-">$ curl -XPUT &apos;http://localhost:9200/_snapshot/my_backup&apos; -H &apos;Content-Type: application/json&apos; -d &apos;{
+    &quot;type&quot;: &quot;fs&quot;,
+    &quot;settings&quot;: {
+        &quot;location&quot;: &quot;my_backup&quot;,
+        &quot;compress&quot;: true
+    }
+}&apos;
+</pre>
+<p>下面的一些配置将被支持：</p>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>location</td>
+<td>快照存放的位置。必须设置，不能为空。</td>
+</tr>
+<tr>
+<td>compress</td>
+<td>是否开启快照文件的压缩。压缩仅处理元数据文件（索引的映射与配置信息）。数据文件不会被压缩。默认为true。</td>
+</tr>
+<tr>
+<td>chunk_size</td>
+<td>可以根据需要在创建快照过程中将大文件分解成块。块大小以字节为单位，或直接指定大小单位，例如：1g，10m，5k。默认为null（不限制块大小）。</td>
+</tr>
+<tr>
+<td>max_restore_bytes_per_sec</td>
+<td>每个节点在快照还原时的速率。默认为40mb每秒。</td>
+</tr>
+<tr>
+<td>max_snapshot_bytes_per_sec</td>
+<td>每个节点在快照创建时的速率。默认为40mb每秒。</td>
+</tr>
+<tr>
+<td>readonly</td>
+<td>标记仓库为只读。默认为false。</td>
+</tr>
+</tbody>
+</table>
+<h2 class="mume-header" id="&#x53EA;&#x8BFB;url&#x4ED3;&#x5E93;">只读URL仓库</h2>
+
+<p>URL仓库（&quot;type&quot;: &quot;url&quot;）可以被用作另一种只读方式去访问共享文件系统仓库的数据。需要指定url参数为共享文件系统仓库的根路径。下面的一些设置将被支持：</p>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>url</td>
+<td>快照的位置。必须设置，不能为空。</td>
+</tr>
+</tbody>
+</table>
+<p>URL仓库支持以下协议： “HTTP”， “HTTPS”， “FTP”， “file”和“jar”。URL仓库在使用http:， https:和ftp:协议的路径时，必须指定允许的URL被列入白名单repositories.url.allowed_urls，此设置在主机、路径、查询参数和片段的地方支持通配符。例如：</p>
+<pre class="language-">repositories.url.allowed_urls: [&quot;http://www.example.org/root/*&quot;, &quot;https://*.mydomain.com/*?*#*&quot;]
+</pre>
+<p>URL仓库在使用file:协议的路径时，路径只能指向配置在path.repo中的设置，配置方式类似于共享文件系统仓库。</p>
+<h2 class="mume-header" id="&#x4ED3;&#x5E93;&#x63D2;&#x4EF6;">仓库插件</h2>
+
+<p>官方可用的其他仓库插件：</p>
+<ul>
+<li><a href="https://www.elastic.co/guide/en/elasticsearch/plugins/5.3/repository-s3.html">repository-s3</a>支持S3仓库</li>
+<li><a href="https://www.elastic.co/guide/en/elasticsearch/plugins/5.3/repository-hdfs.html">repository-hdfs</a>支持Hadoop环境的的HDFS仓库</li>
+<li><a href="https://www.elastic.co/guide/en/elasticsearch/plugins/5.3/repository-azure.html">repository-azure</a>支持Azure的仓库</li>
+<li><a href="https://www.elastic.co/guide/en/elasticsearch/plugins/5.3/repository-gcs.html">repository-gcs</a>支持谷歌云存储仓库</li>
+</ul>
+<h2 class="mume-header" id="&#x4ED3;&#x5E93;&#x9A8C;&#x8BC1;">仓库验证</h2>
+
+<p>当仓库创建完成后，会立即核实所有主节点与数据节点，以确保集群上所有节点上的功能。该verify参数可用于在创建或更新仓库时显式地禁用仓库验证：</p>
+<pre class="language-">PUT /_snapshot/s3_repository?verify=false
+{
+  &quot;type&quot;: &quot;s3&quot;,
+  &quot;settings&quot;: {
+    &quot;bucket&quot;: &quot;my_s3_bucket&quot;,
+    &quot;region&quot;: &quot;eu-west-1&quot;
+  }
+}
+</pre>
+<p>验证过程也可通过运行下面的命令手动执行：</p>
+<pre class="language-">POST /_snapshot/s3_repository/_verify
+</pre>
+<p>它将返回验证成功的所有节点，或者是验证失败的消息。</p>
+<h2 class="mume-header" id="&#x5FEB;&#x7167;">快照</h2>
+
+<p>一个仓库可以包含相同的集群的多个快照。快照需要在集群内标记成一个唯一的名称。以下是在my_backup的仓库中创建一个名为snapshot_1的快照指令：</p>
+<pre class="language-">PUT /_snapshot/my_backup/snapshot_1?
+wait_for_completion=true
+</pre>
+<p><em>wait_for_completion</em> 参数标识此请求是否需要等待快照创建完成，默认立即返回，不等待快照创建结束。在快照创建开始时，所有之前的快照信息都将被加载到内存，这意味着一个大仓库执行此命令可能需要几秒钟（或甚至几分钟）才能返回，即使该命令的<em>wait_for_completion</em>参数设置为false。</p>
+<p>创建快照时，默认会将集群中所有打开和已开始的索引全部备份，也可以通过设置创建快照的参数体来为指定为哪些索引创建快照。</p>
+<pre class="language-">PUT /_snapshot/my_backup/snapshot_1
+{
+  &quot;indices&quot;: &quot;index_1,index_2&quot;,
+  &quot;ignore_unavailable&quot;: true,
+  &quot;include_global_state&quot;: false
+}
+</pre>
+<p>快照包含的索引列表可以通过<em>indices</em>参数设置，支持多索引语法。快照请求还支持<em>ignore_unavailable</em>选项，设置它true会在快照创建过程中忽略不存在的索引错误，默认情况下<em>ignore_unavailable</em>参数未设置，在创建快照时如果缺少一个索引将会失败。通过设置<em>include_global_state</em>为<em>false</em>，可以在创建的快照中不存储集群的全局状态信息。默认情况下，如果参与快照的一个或多个索引没有可用的主分片，则整个快照将失败，这种行为可以通过设置<em>partial</em>为<em>true</em>来改变。</p>
+<p>索引创建快照时是增量的处理时。在创建索引快照时，Elasticsearch会分析创库中已存储的快照信息，只复制上一次快照后发生的新增、或发生变化的文件。它允许多个快照保存在一个仓库中。创建快照过程采用非阻塞方式执行。正在执行创建快照的索引可以继续执行索引和搜索操作。但快照是表示在创建快照那一瞬间点的索引视图，所以在快照开始执行之后添加到索引将不存在于快照中。快照在主分片上会立即开始执行，快照开始后这个集群分片将不会迁移。1.2.0版本之前，在创建快照时如果群集有参与快照的索引的任何主分片搬迁或初始化动作，创建快照都将会失败。从1.2.0版本开始，Elasticsearch将等待分片搬迁或初始化完成之后再执行快照。</p>
+<p>除了创建每个索引的备份外，快照也可以存储全局集群的元数据，其中包括群集的持久化设置和模板信息，临时设置和已创建的快照仓库将不会作为快照的一部分存储。</p>
+<p>在一个集群中，同一时间只能有一个创建快照的进程被执行。虽然已经开始创建快照的分片不能移动到另一个节点，但可能会干扰集群的再平衡处理和分配过滤。Elasticsearch将只能在快照结束时，根据当前分配过滤设置和再平衡算法将一个分片移动到另一个节点。</p>
+<p>一旦开始创建快照，可以通过如下命令来查询此快照的有关信息：</p>
+<pre class="language-">GET /_snapshot/my_backup/snapshot_1
+</pre>
+<p>此命令返回的快照相关信息包括起始和结束时间、创建快照的elasticsearch版本、包含的索引列表、快照的当前状态、以及在快照创建过程中发生故障的索引列表。快照状态如下：</p>
+<table>
+<thead>
+<tr>
+<th>状态码</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IN_PROGRESS</td>
+<td>当前快照正在运行。</td>
+</tr>
+<tr>
+<td>SUCCESS</td>
+<td>创建快照完成并且所有分片都存储成功。</td>
+</tr>
+<tr>
+<td>FAILED</td>
+<td>创建快照失败，没有存储任何数据。</td>
+</tr>
+<tr>
+<td>PARTIAL</td>
+<td>集状态全局状态已储存，但至少有一个分片的数据没有存储成功。在返回的failure字段中包含了相关未正确处理的分片详细信息。</td>
+</tr>
+<tr>
+<td>INCOMPATIBLE</td>
+<td>快照是由一个老版本的elasticsearch创建，因此与集群的当前版本不兼容。</td>
+</tr>
+</tbody>
+</table>
+<p>跟仓库类似，多个快照可以在一个请求查询，还支持通配符：</p>
+<pre class="language-">GET /_snapshot/my_backup/snapshot_*,some_other_snapshot
+</pre>
+<p>下面指令介绍了如何查询仓库中的所有快照：</p>
+<pre class="language-">GET /_snapshot/my_backup/_all
+</pre>
+<p>如果一些快照不可用导致查询失败，可以通过设置布尔参数ignore_unavailable来返回当前可用的所有快照。</p>
+<p>正在运行中的快照可以使用下面的命令来查询：</p>
+<pre class="language-">$ curl -XGET &quot;localhost:9200/_snapshot/my_backup/_current&quot;
+</pre>
+<p>快照可以使用下面的命令来从仓库中删除：</p>
+<pre class="language-">DELETE /_snapshot/my_backup/snapshot_1
+</pre>
+<p>当一个快照从版本库中删除，Elasticsearch将删除此快照关联的但不被其它快照引用的所有文件。一旦删除快照动作执行，此快照当前正在创建的进程将被终止并且已创建的文件都将被清理。因此，删除快照操作可以用于取消错误启动的长时间运行的快照操作。</p>
+<p>可以使用下面的命令删除整个仓库：</p>
+<pre class="language-">DELETE /_snapshot/my_backup
+</pre>
+<p>当仓库被删除时，Elasticsearch只是删除快照的仓库位置引用信息。快照本身没有删除，并在原来的位置。</p>
+<h2 class="mume-header" id="&#x8FD8;&#x539F;">还原</h2>
+
+<p>快照可以使用下面的命令来还原：</p>
+<pre class="language-">POST /_snapshot/my_backup/snapshot_1/_restore
+</pre>
+<p>默认情况下，快照中的所有索引都会被还原，集群的全局设置不会被还原。这可能是最好的还原选择，允许通过设置<em>indices</em>与<em>include_global_state</em>参数来控制还原集群的全局设置与索引。索引列表支持多索引语法。<em>rename_pattern</em>与<em>rename_replacement</em>选项可以在还原时通过正则表达式来重命名索引。设置<em>include_aliases</em>为<em>false</em>可以防止别名和关联的索引一起被还原。</p>
+<pre class="language-">POST /_snapshot/my_backup/snapshot_1/_restore
+{
+  &quot;indices&quot;: &quot;index_1,index_2&quot;,
+  &quot;ignore_unavailable&quot;: true,
+  &quot;include_global_state&quot;: true,
+  &quot;rename_pattern&quot;: &quot;index_(.+)&quot;,
+  &quot;rename_replacement&quot;: &quot;restored_index_$1&quot;
+}
+</pre>
+<p>还原操作可以在正常工作的集群上执行。但是，已存在的索引需要先关闭后才能还原，并要跟快照中的索引具有相同数目的分片。还原操作将自动打开已存在的关闭的索引，如果被还原的索引在集群中不存在，将创建新的索引。如果需要还原群集状态include_global_state（默认false），所有不存在的模板都会新增、已存在的会使用快照中的同名模板替换，持久化设置也将被添加到现有的持久化设置中。</p>
+<h2 class="mume-header" id="&#x90E8;&#x5206;&#x8FD8;&#x539F;">部分还原</h2>
+
+<p>默认情况下，如果参与操作的一个或多个索引没有可用的快照分片，整个还原操作都将失败。这可能是创建快照时一些分片备份失败，你依然可以通过设置partial参数为true来尽可能的去还原。请注意，只有备份成功的分片才会在这种情况还原，所有丢失的分片将被创建成一个空的分片。</p>
+<h2 class="mume-header" id="&#x8FD8;&#x539F;&#x8FC7;&#x7A0B;&#x4E2D;&#x66F4;&#x6539;&#x7D22;&#x5F15;&#x8BBE;&#x7F6E;">还原过程中更改索引设置</h2>
+
+<p>大多数的索引设置可以在还原过程中被重写。例如，下面的指令将在还原索引index_1时，不创建任何副本以及采用默认的索引刷新间隔：</p>
+<pre class="language-">POST /_snapshot/my_backup/snapshot_1/_restore
+{
+  &quot;indices&quot;: &quot;index_1&quot;,
+  &quot;index_settings&quot;: {
+    &quot;index.number_of_replicas&quot;: 0
+  },
+  &quot;ignore_index_settings&quot;: [
+    &quot;index.refresh_interval&quot;
+  ]
+}
+</pre>
+<p>请注意，有一些设置不能在还原时修改，如<br>
+<em>index.number_of_shards</em>。</p>
+<h2 class="mume-header" id="&#x8FD8;&#x539F;&#x5230;&#x4E0D;&#x540C;&#x96C6;&#x7FA4;">还原到不同集群</h2>
+
+<p>存储在快照中的信息是不依赖于特定的群集或群集名称的，因此有可能从一个集群还原另一个群集创建的快照。在开始还原前，需要在新的集群中创建一个包含了原快照文件的仓库，新的群集不必具有相同的大小或拓扑。然而，新集群的版本应该比用于创建快照的群集的版本更高或者相同（但只能跨1个重大更新的版本）。例如，你可以还原1.x版本的快照到2.x版本的集群，而不是1.x版本的快照到5.x版本的集群。</p>
+<p>如果新的集群节点比原集群少，需要做一些额外的考虑。首先，必须确保新的集群有足够的容量来存储所有索引的快照。你可以在还原时配置减少副本的数量，这能帮助我们将快照还原到更小集群，也可以指定<em>indices</em>参数为快照中的索引的子集。在elasticsearch 1.5.0版本之前，还原持久设置是没有检查<em>discovery.zen.minimum_master_nodes</em>的设置，可能导致还原到一个小的集群时不兼容，因此可以在较小的集群中禁用此设置直到达到加入所需的主节点资格数。从1.5.0版本开始不兼容的设置将会被忽略。</p>
+<p>如果原来的集群中的索引分配了特定节点的分片分配过滤，相同的规则将在新的集群中执行。因此，如果新的群集不包含与被还原的索引可以匹配的属性节点，这样的索引将不会被成功还原，除非在还原时修改这些索引的分配配置。</p>
+<h2 class="mume-header" id="&#x5FEB;&#x7167;&#x72B6;&#x6001;">快照状态</h2>
+
+<p>可以使用下面的命令来查询当前正在运行的快照列表的详细状态信息：</p>
+<pre class="language-">GET /_snapshot/_status
+</pre>
+<p>在这种格式，此命令将返回当前运行的所有快照的信息。通过指定仓库的名字可以限制返回特定仓库的快照信息：</p>
+<pre class="language-">GET /_snapshot/my_backup/_status
+</pre>
+<p>如果同时指定仓库名称和快照ID，此命令将返回指定快照的状态信息，即使它当前不是正在运行：</p>
+<pre class="language-">GET /_snapshot/my_backup/snapshot_1/_status
+</pre>
+<p>多个ID也被支持：</p>
+<pre class="language-">GET /_snapshot/my_backup/snapshot_1,snapshot_2/_status
+</pre>
+<h2 class="mume-header" id="&#x76D1;&#x63A7;&#x5FEB;&#x7167;&#x8FD8;&#x539F;&#x8FDB;&#x5EA6;">监控快照/还原进度</h2>
+
+<p>有几种方法可以用来监测快照创建与还原正在运行时的执行进度。在创建快照与还原时指定<em>wait_for_completion</em>参数来阻塞客户端，直到操作完成，这是一个可以用来收到操作完成通知的最简单方法。</p>
+<p>快照操作还可以通过定期获取快照信息来监测：</p>
+<pre class="language-">GET /_snapshot/my_backup/snapshot_1
+</pre>
+<p>请注意，获取快照信息操作与创建快照操作使用相同的资源和线程池，因此在执行获取快照信息时如果创建快照的线程正在备份大的分片，可能导致在返回结果前等待可用的资源。在非常大的分片备份情况中等待的时间更明显。</p>
+<p>为了获得更多的直接和完整的信息，可以用快照的status命令来查看：</p>
+<pre class="language-">GET /_snapshot/my_backup/snapshot_1/_status
+</pre>
+<p>快照信息指令仅返回正在进行的快照的基本信息，快照状态指令将返回当前参与备份的每个分片的完成状态。</p>
+<p>还原过程是基于Elasticsearch标准恢复机制，因此标准的恢复监控服务可以用来监视还原的状态。当执行集群还原操作时通常会进入<em>red</em>状态，这是因为还原操作是从“恢复”被还原的索引的主片开始的。在此操作期间主片变得不可用，这表现在集群状态为<em>red</em>。一旦Elasticsearch主片被切换到恢复完成时，这时整个集群的状态将被切换成<em>yellow</em>并且开始创建所需数量的副本。一旦创建了所有必需的副本，集群切换到<em>green</em>状态。</p>
+<p>集群的健康情况只是在还原过程中提供了一个比较粗的状态，你还可以通过使用<a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/indices-recovery.html">indices recovery</a>与<a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/cat-recovery.html">cat recovery</a>的API来获得更详细的恢复过程信息与索引的当前状态信息。</p>
+<h2 class="mume-header" id="&#x505C;&#x6B62;&#x5F53;&#x524D;&#x6B63;&#x5728;&#x8FD0;&#x884C;&#x7684;&#x5FEB;&#x7167;&#x548C;&#x8FD8;&#x539F;&#x64CD;&#x4F5C;">停止当前正在运行的快照和还原操作</h2>
+
+<p>快照和还原框架只允许在同一个时间点只运行一个快照或一个还原操作。如果当前正在运行的快照被错误执行，或执行时间特别长，可以使用删除快照操作来终止它。删除快照操作将检查当前快照是否正在运行，如果确实如此，删除操作将停止该快照并从仓库中删除之前的快照数据。</p>
+<pre class="language-">DELETE /_snapshot/my_backup/snapshot_1
+</pre>
+<p>还原操作使用标准分片恢复机制。因此，任何当前正在运行的还原操作都可以通过删除正在还原的索引来取消。请注意，所有被删除的索引数据都将从集群中通过这一操作全部删除。</p>
+<h2 class="mume-header" id="&#x5FEB;&#x7167;&#x548C;&#x8FD8;&#x539F;&#x64CD;&#x4F5C;&#x5BF9;&#x96C6;&#x7FA4;&#x963B;&#x585E;&#x7684;&#x5F71;&#x54CD;">快照和还原操作对集群阻塞的影响</h2>
+
+<p>许多快照与还原操作都会给集群和索引的阻塞带来影响。例如，创建和删除仓库需要写全局元数据。创建快照操作要求所有索引及其元数据、以及全局元数据是可读的。还原操作需要全局元数据可写。但索引级别的阻塞在还原过程中可以忽略，因为索引的还原本质上是新建索引。请注意，仓库内容不是群集的一部分，因此集群阻塞不会影响仓库内部的操作，譬如在一个已创建的仓库中获取快照列表或删除快照。</p>
+
+      </div>
+      <div class="md-sidebar-toc"><ul>
+<li><a href="#%E5%BF%AB%E7%85%A7%E5%92%8C%E8%BF%98%E5%8E%9F">快照和还原</a>
+<ul>
+<li><a href="#%E4%BB%93%E5%BA%93">仓库</a></li>
+<li><a href="#%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E4%BB%93%E5%BA%93">共享文件系统仓库</a></li>
+<li><a href="#%E5%8F%AA%E8%AF%BBurl%E4%BB%93%E5%BA%93">只读URL仓库</a></li>
+<li><a href="#%E4%BB%93%E5%BA%93%E6%8F%92%E4%BB%B6">仓库插件</a></li>
+<li><a href="#%E4%BB%93%E5%BA%93%E9%AA%8C%E8%AF%81">仓库验证</a></li>
+<li><a href="#%E5%BF%AB%E7%85%A7">快照</a></li>
+<li><a href="#%E8%BF%98%E5%8E%9F">还原</a></li>
+<li><a href="#%E9%83%A8%E5%88%86%E8%BF%98%E5%8E%9F">部分还原</a></li>
+<li><a href="#%E8%BF%98%E5%8E%9F%E8%BF%87%E7%A8%8B%E4%B8%AD%E6%9B%B4%E6%94%B9%E7%B4%A2%E5%BC%95%E8%AE%BE%E7%BD%AE">还原过程中更改索引设置</a></li>
+<li><a href="#%E8%BF%98%E5%8E%9F%E5%88%B0%E4%B8%8D%E5%90%8C%E9%9B%86%E7%BE%A4">还原到不同集群</a></li>
+<li><a href="#%E5%BF%AB%E7%85%A7%E7%8A%B6%E6%80%81">快照状态</a></li>
+<li><a href="#%E7%9B%91%E6%8E%A7%E5%BF%AB%E7%85%A7%E8%BF%98%E5%8E%9F%E8%BF%9B%E5%BA%A6">监控快照/还原进度</a></li>
+<li><a href="#%E5%81%9C%E6%AD%A2%E5%BD%93%E5%89%8D%E6%AD%A3%E5%9C%A8%E8%BF%90%E8%A1%8C%E7%9A%84%E5%BF%AB%E7%85%A7%E5%92%8C%E8%BF%98%E5%8E%9F%E6%93%8D%E4%BD%9C">停止当前正在运行的快照和还原操作</a></li>
+<li><a href="#%E5%BF%AB%E7%85%A7%E5%92%8C%E8%BF%98%E5%8E%9F%E6%93%8D%E4%BD%9C%E5%AF%B9%E9%9B%86%E7%BE%A4%E9%98%BB%E5%A1%9E%E7%9A%84%E5%BD%B1%E5%93%8D">快照和还原操作对集群阻塞的影响</a></li>
+</ul>
+</li>
+</ul>
+</div>
+      <a id="sidebar-toc-btn">≡</a>
+    </body>
+    
+    
+    
+    <script>
+(function bindTaskListEvent() {
+  var taskListItemCheckboxes = document.body.getElementsByClassName('task-list-item-checkbox')
+  for (var i = 0; i < taskListItemCheckboxes.length; i++) {
+    var checkbox = taskListItemCheckboxes[i]
+    var li = checkbox.parentElement
+    if (li.tagName !== 'LI') li = li.parentElement
+    if (li.tagName === 'LI') {
+      li.classList.add('task-list-item')
+    }
+  }
+}())    
+</script>
+    
+<script>
+
+var sidebarTOCBtn = document.getElementById('sidebar-toc-btn')
+sidebarTOCBtn.addEventListener('click', function(event) {
+  event.stopPropagation()
+  if (document.body.hasAttribute('html-show-sidebar-toc')) {
+    document.body.removeAttribute('html-show-sidebar-toc')
+  } else {
+    document.body.setAttribute('html-show-sidebar-toc', true)
+  }
+})
+</script>
+      
+  </html>
